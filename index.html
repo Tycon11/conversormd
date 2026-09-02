@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>conversor de moeda</title>
+</head>
+
+<body>
+    <div id="geral">
+        <header>
+            <h1>Conversor de Moedas</h1>
+        </header>
+        <main>
+            <label id="label1" for="selec">Selecione a moeda para converter:</label>
+            <select name="moeda" id="selec" aria-label="Selecione a moeda para converter">
+                <option value="" disabled selected>Selecione uma conversão</option>
+                <option value="1">1- Real para Dólar</option>
+                <option value="2">2- Real para Euro </option>
+            </select>
+            <p id="status" class="sr-only" aria-live="polite"></p>
+            <input type="number" id="txtvalor" placeholder="Digite o valor em Real">
+            <button id="btn" onclick="calculo()">Converter</button>
+            <div id="resultado"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
