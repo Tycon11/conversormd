@@ -7,7 +7,7 @@ function falar(texto) {
   }
 
   const fala = new SpeechSynthesisUtterance(texto);
-  fala.lang = "pt-BR";
+  fala.lang = "en-US";
   fala.rate = 1;
   fala.pitch = 1;
 
