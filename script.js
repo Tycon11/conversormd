@@ -1,13 +1,13 @@
 const select = document.getElementById("selec");
 const status = document.getElementById("status");
 
-function falar(texto) {
+function falar(texto, lang = "pt-BR") {
   if (!("speechSynthesis" in window)) {
     return;
   }
 
   const fala = new SpeechSynthesisUtterance(texto);
-  fala.lang = "en-US";
+  fala.lang = lang;
   fala.rate = 1;
   fala.pitch = 1;
 
@@ -52,16 +52,16 @@ function calculo() {
     case "1":
       txtvalor = txtvalor/5.10;
       resultado.innerHTML ="<strong>Resultado:</strong> 💵 Dólar US$" + txtvalor.toFixed(2);
-       const reais = Math.floor(txtvalor);
-  const centavos = Math.round((txtvalor - reais) * 100);
-      falar(` ${reais} Dólares e ${centavos} centavos`);
+      const reais = Math.floor(txtvalor);
+      const centavos = Math.round((txtvalor - reais) * 100);
+      falar(`${reais} Dollars and ${centavos} cents`, "en-US");
       break;
     case "2":
-    txtvalor = txtvalor/5.91;
-     const reais1 = Math.floor(txtvalor);
-  const centavos1 = Math.round((txtvalor - reais1) * 100);
-    resultado.innerHTML ="<strong>Resultado:</strong> 💶 Euro €" + txtvalor.toFixed(2);
-      falar(`${reais1} Euros e ${centavos1} centavos`);
+      txtvalor = txtvalor/5.91;
+      const reais1 = Math.floor(txtvalor);
+      const centavos1 = Math.round((txtvalor - reais1) * 100);
+      resultado.innerHTML ="<strong>Resultado:</strong> 💶 Euro €" + txtvalor.toFixed(2);
+      falar(`${reais1} Euros et ${centavos1} centimes`, "fr-FR");
       break;
   }
 }
